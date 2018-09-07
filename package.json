@@ -1,0 +1,78 @@
+{
+  "name": "esquemata",
+  "version": "0.1.0",
+  "description": "An Avro schema handler that communicates with the confluent-schema-registry.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "nps test"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Daniel Olivares",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "codecov": "^3.0.4",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "nps": "^5.9.3",
+    "nps-utils": "^1.7.0",
+    "opt-cli": "^1.6.0",
+    "semantic-release": "^15.9.12",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "dependencies": {
+    "avsc": "^5.4.3",
+    "node-rdkafka": "^2.4.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "testMatch": [
+      "**/__tests__/**/*test.js?(x)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "dist/*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
